@@ -14,7 +14,3 @@ t2= a2.trends_place(1)
 
 for t in t2[0]["trends"]:
     print(t['name'])
-
-#virtualenv venv --no-site-packages    
-# venv\Scripts\activate
-# pip install -r requirements.txt

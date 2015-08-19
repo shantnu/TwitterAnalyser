@@ -7,6 +7,7 @@ import json
 
 
 class twitter_listener(StreamListener):
+
     def __init__(self, num_tweets_to_grab):
         self.counter = 0
         self.num_tweets_to_grab = num_tweets_to_grab
@@ -41,8 +42,8 @@ if __name__ == "__main__":
 
     for trend in trends[0]["trends"]:
         print(trend['name'])
-        
-    twitter_stream = Stream(auth, twitter_listener(num_tweets_to_grab = 10))
+
+    twitter_stream = Stream(auth, twitter_listener(num_tweets_to_grab=10))
     try:
         twitter_stream.sample()
     except Exception as e:

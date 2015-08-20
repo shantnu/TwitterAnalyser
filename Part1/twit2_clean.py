@@ -2,19 +2,15 @@ import tweepy
 from tweepy.streaming import StreamListener
 from tweepy import Stream
 from local_config import *
-import pdb
 import json
 
 
 class twitter_listener(StreamListener):
 
     def on_data(self, data):
-        try:
-            j = json.loads(data)
-            print(j["text"])
-            return True
-        except:
-            pass
+        j = json.loads(data)
+        print(j["text"])
+        return True
 
     def on_error(self, status):
         print(status)

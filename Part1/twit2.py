@@ -2,7 +2,6 @@ import tweepy
 from tweepy.streaming import StreamListener
 from tweepy import Stream
 from local_config import *
-import pdb
 import json
 
 class l(StreamListener):

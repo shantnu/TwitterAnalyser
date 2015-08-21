@@ -6,51 +6,11 @@ import pdb
 import json
 from collections import Counter
 
-langs = \
-    {'ar': 'Arabic',
-     'bg': 'Bulgarian',
-     'ca': 'Catalan',
-     'cs': 'Czech',
-     'da': 'Danish',
-     'de': 'German',
-     'el': 'Greek',
-     'en': 'English',
-     'es': 'Spanish',
-     'et': 'Estonian',
-     'fa': 'Persian',
-     'fi': 'Finnish',
-     'fr': 'French',
-     'hi': 'Hindi',
-     'hr': 'Croatian',
-     'hu': 'Hungarian',
-     'id': 'Indonesian',
-     'is': 'Icelandic',
-     'it': 'Italian',
-     'iw': 'Hebrew',
-     'ja': 'Japanese',
-     'ko': 'Korean',
-     'lt': 'Lithuanian',
-     'lv': 'Latvian',
-     'ms': 'Malay',
-     'nl': 'Dutch',
-     'no': 'Norwegian',
-     'pl': 'Polish',
-     'pt': 'Portuguese',
-     'ro': 'Romanian',
-     'ru': 'Russian',
-     'sk': 'Slovak',
-     'sl': 'Slovenian',
-     'sr': 'Serbian',
-     'sv': 'Swedish',
-     'th': 'Thai',
-     'tl': 'Filipino',
-     'tr': 'Turkish',
-     'uk': 'Ukrainian',
-     'ur': 'Urdu',
-     'vi': 'Vietnamese',
-     'zh_CN': 'Chinese (simplified)',
-     'zh_TW': 'Chinese (traditional)'
-     }
+langs = {'ar': 'Arabic', 'bg': 'Bulgarian', 'ca': 'Catalan', 'cs': 'Czech', 'da': 'Danish', 'de': 'German', 'el': 'Greek', 'en': 'English', 'es': 'Spanish', 'et': 'Estonian',
+         'fa': 'Persian', 'fi': 'Finnish', 'fr': 'French', 'hi': 'Hindi', 'hr': 'Croatian', 'hu': 'Hungarian', 'id': 'Indonesian', 'is': 'Icelandic', 'it': 'Italian', 'iw': 'Hebrew',
+         'ja': 'Japanese', 'ko': 'Korean', 'lt': 'Lithuanian', 'lv': 'Latvian', 'ms': 'Malay', 'nl': 'Dutch', 'no': 'Norwegian', 'pl': 'Polish', 'pt': 'Portuguese', 'ro': 'Romanian',
+         'ru': 'Russian', 'sk': 'Slovak', 'sl': 'Slovenian', 'sr': 'Serbian', 'sv': 'Swedish', 'th': 'Thai', 'tl': 'Filipino', 'tr': 'Turkish', 'uk': 'Ukrainian', 'ur': 'Urdu',
+         'vi': 'Vietnamese', 'zh_CN': 'Chinese (simplified)', 'zh_TW': 'Chinese (traditional)'}
 
 
 class twitter_listener(StreamListener):
@@ -71,11 +31,7 @@ class twitter_listener(StreamListener):
             retweet_count = json_data["retweeted_status"]["retweet_count"]
 
             if retweet_count >= self.retweet_count:
-                print(
-                    json_data["text"],
-                    retweet_count,
-                    langs[
-                        json_data["lang"]])
+                print(json_data["text"], retweet_count, langs[json_data["lang"]])
                 self.top_languages.append(langs[json_data["lang"]])
 
             if self.counter >= self.num_tweets_to_grab:

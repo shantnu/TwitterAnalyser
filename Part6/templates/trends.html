@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+
+{% block tweets %} 
+
+    <h3> Trending On Twitter: </h3>
+    {% for t in trend %}
+
+    <strong> {{t | safe}} </strong>
+    </br>
+    {% endfor %}
+    
+    {% for t in trend_tweet %}
+    
+    {{t | safe}} 
+    
+    {% endfor %}
+
+ {% endblock %}

@@ -2,7 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import unittest
 import sqlite3
-from twit1 import *
 import requests
 
 class TestFlask(unittest.TestCase):

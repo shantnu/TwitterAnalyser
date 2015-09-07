@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+
+{% block tweets %} 
+<b> Most Popular Tweets </b>
+    {% for tweet in tweets %}
+        {{ tweet | safe}}
+    {% endfor %}
+    
+
+ {% endblock %}

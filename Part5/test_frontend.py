@@ -8,7 +8,7 @@ class TestFlask(unittest.TestCase):
 
     def test_web_app_running(self):
         try:
-             r =requests.get("http://127.0.0.1:5000/")
+             r = requests.get("http://127.0.0.1:5000/")
         except:
             self.fail("Could not open web app. Not running, or crashed. Test Failed")
 
